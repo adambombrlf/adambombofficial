@@ -7,6 +7,74 @@
 
   <!-- External CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- AUTO TOUR SCRIPT -->
+  <script>
+    const tourData = {
+      "July 2026": [
+        { date: "02 Jul", city: "Casalbetrame, IT", venue: "La Cueva", notes: "" },
+        { date: "03 Jul", city: "Montpellier, FR", venue: "Secret Place", notes: "" },
+        { date: "04 Jul", city: "Nice, FR", venue: "Le Brassitorium", notes: "" },
+        { date: "06 Jul", city: "Marseille, FR", venue: "Le Cherrydon", notes: "" },
+        { date: "09 Jul", city: "Düsseldorf, DE", venue: "Pitcher", notes: "" },
+        { date: "10 Jul", city: "Ittre, BE", venue: "Zik Zak", notes: "" },
+        { date: "11 Jul", city: "Essen, DE", venue: "Freak Show", notes: "" },
+        { date: "13 Jul", city: "Barberaz, FR", venue: "Le Brin de Zinc", notes: "" },
+        { date: "14 Jul", city: "Lyon, FR", venue: "LDLC Arena", notes: "Supporting Scorpions" },
+        { date: "15 Jul", city: "Paris, FR", venue: "La Dame de Canton", notes: "" },
+        { date: "17 Jul", city: "Paris, FR", venue: "Accor Arena", notes: "Supporting Scorpions" },
+        { date: "18 Jul", city: "Mennecy, FR", venue: "Le Stock", notes: "" },
+        { date: "19 Jul", city: "Cergy, FR", venue: "Le Pacific Rock", notes: "" },
+        { date: "20 Jul", city: "Strasbourg, FR", venue: "Le Zenith", notes: "Supporting Scorpions" },
+        { date: "22 Jul", city: "Darmstadt, DE", venue: "Red Barn", notes: "" },
+        { date: "23 Jul", city: "Nuremberg, DE", venue: "Brown Sugar", notes: "" },
+        { date: "25 Jul", city: "Arnstadt, DE", venue: "Jungfersprung", notes: "" }
+      ],
+      "August 2026": [
+        { date: "06 Aug", city: "Kaunas, LT", venue: "Klub Lemmy", notes: "" },
+        { date: "07 Aug", city: "Klaipeda, LT", venue: "Maluna Loftas", notes: "" },
+        { date: "08 Aug", city: "Liepaja, LV", venue: "Fontaine Palace", notes: "" },
+        { date: "11 Aug", city: "Brno, CZ", venue: "M13", notes: "" },
+        { date: "12 Aug", city: "Vienna, AT", venue: "Chelsea", notes: "" },
+        { date: "13 Aug", city: "Hradec Kralove, CZ", venue: "AC Klub", notes: "" },
+        { date: "14 Aug", city: "Prague, CZ", venue: "Modra Vopice", notes: "" }
+      ]
+    };
+
+    function renderTourData() {
+      const container = document.getElementById("tour-auto");
+      container.innerHTML = "";
+
+      Object.keys(tourData).forEach(month => {
+        const section = document.createElement("div");
+
+        section.innerHTML = `
+          <h3>${month}</h3>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr><th>Date</th><th>City</th><th>Venue</th><th>Notes</th></tr>
+              </thead>
+              <tbody>
+                ${tourData[month].map(show => `
+                  <tr>
+                    <td>${show.date}</td>
+                    <td>${show.city}</td>
+                    <td>${show.venue}</td>
+                    <td>${show.notes}</td>
+                  </tr>
+                `).join("")}
+              </tbody>
+            </table>
+          </div>
+        `;
+        container.appendChild(section);
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", renderTourData);
+  </script>
+
 </head>
 
 <body>
@@ -28,216 +96,149 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <!-- SOCIAL ICONS -->
   <div class="social-icons">
-    <a href="https://www.facebook.com/adambomb2020" target="_blank" aria-label="Facebook">
-      <img src="assets/img/misc/icon-facebook-pink.svg" alt="Facebook">
-    </a>
-    <a href="https://www.youtube.com/@flashpaper88" target="_blank" aria-label="YouTube">
-      <img src="assets/img/misc/icon-youtube-pink.svg" alt="YouTube">
-    </a>
-    <a href="http://instagram.com/adambomb.x/" target="_blank" aria-label="Instagram">
-      <img src="assets/img/misc/icon-instagram-pink.svg" alt="Instagram">
-    </a>
-    <a href="https://adambomb.bandcamp.com" target="_blank" aria-label="Bandcamp">
-      <img src="assets/img/misc/icon-bandcamp-pink.svg" alt="Bandcamp">
-    </a>
+    <a href="https://www.facebook.com/adambomb2020" target="_blank"><img src="assets/img/misc/icon-facebook-pink.svg"></a>
+    <a href="https://www.youtube.com/@flashpaper88" target="_blank"><img src="assets/img/misc/icon-youtube-pink.svg"></a>
+    <a href="http://instagram.com/adambomb.x/" target="_blank"><img src="assets/img/misc/icon-instagram-pink.svg"></a>
+    <a href="https://adambomb.bandcamp.com" target="_blank"><img src="assets/img/misc/icon-bandcamp-pink.svg"></a>
   </div>
 </header>
 
 <main>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-text">
-      <h1>Adam Bomb</h1>
-      <p>Over 40 years of high‑voltage metal, sweat and guitar fire — from <strong>Fatal Attraction</strong> to <strong>LiveDream</strong>, from clubs to arenas with Scorpions. This is the official home of Adam Bomb: tour dates, records, and rock ’n’ roll mayhem.</p>
+<section class="hero">
+  <div class="hero-text">
+    <h1>Adam Bomb</h1>
+    <p>Over 40 years of high‑voltage metal, sweat and guitar fire — from <strong>Fatal Attraction</strong> to <strong>LiveDream</strong>, from clubs to arenas with Scorpions.</p>
+  </div>
+</section>
+
+<section id="bio" class="section">
+  <h2>Bio</h2>
+  <div class="two-col">
+    <div>
+      <p>Adam Bomb (Adam Brenner) began his career as a teenage guitar prodigy in Seattle...</p>
+      <p>Throughout the 1980s he became a cult figure...</p>
     </div>
-  </section>
-
-  <!-- BIO -->
-  <section id="bio" class="section">
-    <h2>Bio</h2>
-
-    <div class="two-col">
-      <div>
-        <p>Adam Bomb (Adam Brenner) began his career as a teenage guitar prodigy in Seattle, quickly gaining attention for his explosive playing style and flamboyant stage presence. By the age of 16 he was performing with members of TKO and Queensrÿche, before moving to New York City to fully immerse himself in the rock scene.</p>
-
-        <p>Throughout the 1980s he became a cult figure in the glam and hard‑rock underground, collaborating with members of KISS, Aerosmith, Black ’n Blue, and even John Paul Jones of Led Zeppelin. His debut album <strong>Fatal Attraction</strong> became a fan‑favorite, followed by a long string of releases that showcased his mix of glam, punk attitude, and high‑energy guitar theatrics.</p>
-      </div>
-
-      <div>
-        <p>Over the decades Adam Bomb toured relentlessly across Europe, the United States, and UK, often armed with his signature pyrotechnic guitar show. His discography spans glam metal, raw rock ’n’ roll, acoustic sessions, and live albums that capture the chaos and electricity of his performances.</p>
-
-        <p>In 2026 he returns to Europe with the <strong>Bang Up Summer Tour</strong>, including special guest appearances supporting <strong>Scorpions</strong> in France. Still loud, still wild, still on fire — Adam Bomb remains one of rock’s most unstoppable forces.</p>
-      </div>
+    <div>
+      <p>Over the decades Adam Bomb toured relentlessly...</p>
+      <p>In 2026 he returns to Europe with the <strong>Bang Up Summer Tour</strong>...</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- BAND -->
-  <section id="band" class="section">
-    <h2>The Band</h2>
+<section id="band" class="section">
+  <h2>The Band</h2>
+  <div class="band-photo">
+    <img src="assets/img/band/adam-the-band.png" alt="Adam Bomb Band">
+  </div>
+  <p class="note center">Adam Bomb – Paul Del Bello – Kid Leo</p>
+</section>
 
-    <div class="band-photo">
-      <img src="assets/img/band/adam-the-band.png" alt="Adam Bomb Band">
-    </div>
+<section id="tour" class="section">
+  <h2>Tour dates</h2>
+  <div id="tour-auto"></div>
+  <p class="note">All dates subject to change – check local listings and venue sites.</p>
+</section>
 
-    <p class="note center">Adam Bomb – Paul Del Bello – Kid Leo</p>
-  </section>
+<section id="music" class="section">
+  <h2>Music & Discography</h2>
 
-  <!-- TOUR -->
-  <section id="tour" class="section">
-    <h2>Tour dates</h2>
+  <iframe style="border-radius:12px"
+    src="https://open.spotify.com/embed/playlist/37i9dQZF1DZ06evO0WtPV8?utm_source=generator"
+    width="100%" height="352" frameBorder="0" loading="lazy"
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+  </iframe>
 
-    <h3>July 2026</h3>
-    <div class="table-wrapper">
-      <table>
-        <thead>
-          <tr><th>Date</th><th>City</th><th>Venue</th><th>Notes</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>02 Jul</td><td>Casalbetrame, IT</td><td>La Cueva</td><td></td></tr>
-          <tr><td>03 Jul</td><td>Montpellier, FR</td><td>Secret Place</td><td></td></tr>
-          <tr><td>04 Jul</td><td>Nice, FR</td><td>Le Brassitorium</td><td></td></tr>
-          <tr><td>06 Jul</td><td>Marseille, FR</td><td>Le Cherrydon</td><td></td></tr>
-          <tr><td>09 Jul</td><td>Düsseldorf, DE</td><td>Pitcher</td><td></td></tr>
-          <tr><td>10 Jul</td><td>Ittre, BE</td><td>Zik Zak</td><td></td></tr>
-          <tr><td>11 Jul</td><td>Essen, DE</td><td>Freak Show</td><td></td></tr>
-          <tr><td>13 Jul</td><td>Barberaz, FR</td><td>Le Brin de Zinc</td><td></td></tr>
-          <tr><td>14 Jul</td><td>Lyon, FR</td><td>LDLC Arena</td><td>Supporting Scorpions</td></tr>
-          <tr><td>15 Jul</td><td>Paris, FR</td><td>La Dame de Canton</td><td></td></tr>
-          <tr><td>17 Jul</td><td>Paris, FR</td><td>Accor Arena</td><td>Supporting Scorpions</td></tr>
-          <tr><td>18 Jul</td><td>Mennecy, FR</td><td>Le Stock</td><td></td></tr>
-          <tr><td>19 Jul</td><td>Cergy, FR</td><td>Le Pacific Rock</td><td></td></tr>
-          <tr><td>20 Jul</td><td>Strasbourg, FR</td><td>Le Zenith</td><td>Supporting Scorpions</td></tr>
-          <tr><td>22 Jul</td><td>Darmstadt, DE</td><td>Red Barn</td><td></td></tr>
-          <tr><td>23 Jul</td><td>Nuremberg, DE</td><td>Brown Sugar</td><td></td></tr>
-          <tr><td>25 Jul</td><td>Arnstadt, DE</td><td>Jungfersprung</td><td></td></tr>
-        </tbody>
-      </table>
-    </div>
+  <p class="note">Selected albums and live releases — click any cover for details.</p>
 
-    <h3>August 2026</h3>
-    <div class="table-wrapper">
-      <table>
-        <thead>
-          <tr><th>Date</th><th>City</th><th>Venue</th><th>Notes</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>06 Aug</td><td>Kaunas, LT</td><td>Klub Lemmy</td><td></td></tr>
-          <tr><td>07 Aug</td><td>Klaipeda, LT</td><td>Maluna Loftas</td><td></td></tr>
-          <tr><td>08 Aug</td><td>Liepaja, LV</td><td>Fontaine Palace</td><td></td></tr>
-          <tr><td>11 Aug</td><td>Brno, CZ</td><td>M13</td><td></td></tr>
-          <tr><td>12 Aug</td><td>Vienna, AT</td><td>Chelsea</td><td></td></tr>
-          <tr><td>13 Aug</td><td>Hradec Kralove, CZ</td><td>AC Klub</td><td></td></tr>
-          <tr><td>14 Aug</td><td>Prague, CZ</td><td>Modra Vopice</td><td></td></tr>
-        </tbody>
-      </table>
-    </div>
+  <div class="discography-grid">
 
-    <p class="note">All dates subject to change – check local listings and venue sites.</p>
-  </section>
+    <article class="release-card">
+      <img src="assets/img/albums/fatalattraction.jpg" alt="Fatal Attraction">
+      <div class="release-meta"><strong>Fatal Attraction</strong></div>
+    </article>
 
-  <!-- MUSIC -->
-  <section id="music" class="section">
-    <h2>Music & Discography</h2>
+    <article class="release-card">
+      <img src="assets/img/albums/puresex.jpg" alt="Pure S.E.X.">
+      <div class="release-meta"><strong>Pure S.E.X.</strong></div>
+    </article>
 
-    <iframe style="border-radius:12px"
-      src="https://open.spotify.com/embed/playlist/37i9dQZF1DZ06evO0WtPV8?utm_source=generator"
-      width="100%" height="352" frameBorder="0" loading="lazy"
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
-    </iframe>
+    <article class="release-card">
+      <img src="assets/img/albums/gravenewworld.jpg" alt="Grave New World">
+      <div class="release-meta"><strong>Grave New World</strong></div>
+    </article>
 
-    <p class="note">Selected albums and live releases — click any cover for details.</p>
+    <article class="release-card">
+      <img src="assets/img/albums/getanimal1.jpg" alt="GETanimal">
+      <div class="release-meta"><strong>GETanimal</strong></div>
+    </article>
 
-    <div class="discography-grid">
+    <article class="release-card">
+      <img src="assets/img/albums/getanimal2.jpg" alt="GETanimal 2">
+      <div class="release-meta"><strong>GETanimal 2</strong></div>
+    </article>
 
-      <!-- ALBUM CARDS -->
-      <article class="release-card">
-        <img src="assets/img/albums/fatalattraction.jpg" alt="Fatal Attraction">
-        <div class="release-meta"><strong>Fatal Attraction</strong></div>
-      </article>
+    <article class="release-card">
+      <img src="assets/img/albums/newyorktimes.jpg" alt="New York Times">
+      <div class="release-meta"><strong>New York Times</strong></div>
+    </article>
 
-      <article class="release-card">
-        <img src="assets/img/albums/puresex.jpg" alt="Pure S.E.X.">
-        <div class="release-meta"><strong>Pure S.E.X.</strong></div>
-      </article>
+    <article class="release-card">
+      <img src="assets/img/albums/thirdworldroar.jpg" alt="Third World Roar">
+      <div class="release-meta"><strong>Third World Roar</strong></div>
+    </article>
 
-      <article class="release-card">
-        <img src="assets/img/albums/gravenewworld.jpg" alt="Grave New World">
-        <div class="release-meta"><strong>Grave New World</strong></div>
-      </article> 
+    <article class="release-card">
+      <img src="assets/img/albums/rocklikefuck.jpg" alt="Rock Like Fuck">
+      <div class="release-meta"><strong>Rock Like Fuck</strong></div>
+    </article>
 
-      <article class="release-card">
-        <img src="assets/img/albums/getanimal1.jpg" alt="GETanimal">
-        <div class="release-meta"><strong>GETanimal</strong></div>
-      </article>
+    <article class="release-card">
+      <img src="assets/img/albums/crazymotherfucker.jpg" alt="Crazy Motherfucker">
+      <div class="release-meta"><strong>Crazy Motherfucker</strong></div>
+    </article>
 
-      <article class="release-card">
-        <img src="assets/img/albums/getanimal2.jpg" alt="GETanimal 2">
-        <div class="release-meta"><strong>GETanimal 2</strong></div>
-      </article>
+    <article class="release-card">
+      <img src="assets/img/albums/rockonrockhard.jpg" alt="Rock On Rock Hard Rock Animal">
+      <div class="release-meta"><strong>Rock On Rock Hard Rock Animal</strong></div>
+    </article>
 
-      <article class="release-card">
-        <img src="assets/img/albums/newyorktimes.jpg" alt="New York Times">
-        <div class="release-meta"><strong>New York Times</strong></div>
-      </article>
+    <article class="release-card">
+      <img src="assets/img/albums/internetbootleg.jpg" alt="Internet Bootleg">
+      <div class="release-meta"><strong>Internet Bootleg</strong></div>
+    </article>
 
-      <article class="release-card">
-        <img src="assets/img/albums/thirdworldroar.jpg" alt="Third World Roar">
-        <div class="release-meta"><strong>Third World Roar</strong></div>
-      </article>
+    <article class="release-card">
+      <img src="assets/img/albums/acoustica.jpg" alt="Acoustica">
+      <div class="release-meta"><strong>Acoustica</strong></div>
+    </article>
 
-      <article class="release-card">
-        <img src="assets/img/albums/rocklikefuck.jpg" alt="Rock Like Fuck">
-        <div class="release-meta"><strong>Rock Like Fuck</strong></div>
-      </article>
+    <article class="release-card">
+      <img src="assets/img/albums/livedream.jpg" alt="Livedream">
+      <div class="release-meta"><strong>Livedream</strong></div>
+    </article>
 
-      <article class="release-card">
-        <img src="assets/img/albums/crazymotherfucker.jpg" alt="Crazy Motherfucker">
-        <div class="release-meta"><strong>Crazy Motherfucker</strong></div>
-      </article>
+    <!-- NEW LIVEDREAM 26 -->
+    <article class="release-card">
+      <img src="assets/img/albums/livedream26front.png" alt="Livedream 26">
+      <div class="release-meta"><strong>Livedream 26</strong></div>
+    </article>
 
-      <article class="release-card">
-        <img src="assets/img/albums/rockonrockhard.jpg" alt="Rock On Rock Hard Rock Animal">
-        <div class="release-meta"><strong>Rock On Rock Hard Rock Animal</strong></div>
-      </article>
+  </div>
+</section>
 
-      <article class="release-card">
-        <img src="assets/img/albums/internetbootleg.jpg" alt="Internet Bootleg">
-        <div class="release-meta"><strong>Internet Bootleg</strong></div>
-      </article>
+<section id="contact" class="section">
+  <h2>Contact & links</h2>
+  <ul class="contact-list">
+    <li><strong>Booking:</strong> <a href="mailto:rlfbooking@aol.com">rlfbooking@aol.com</a></li>
+    <li><strong>Label / Management:</strong> <a href="mailto:info@necktwister.com">info@necktwister.com</a></li>
+  </ul>
+</section>
 
-      <article class="release-card">
-        <img src="assets/img/albums/acoustica.jpg" alt="Acoustica">
-        <div class="release-meta"><strong>Acoustica</strong></div>
-      </article>
-
-      <article class="release-card">
-        <img src="assets/img/albums/livedream.jpg" alt="Livedream">
-        <div class="release-meta"><strong>Livedream</strong></div>
-      </article>
-      
-      <article class="release-card">
-        <img src="assets/img/albums/livedream26front.png" alt="Livedream 26">
-        <div class="release-meta"><strong>Livedream 26</strong></div>
-      </article>
-     
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="section">
-    <h2>Contact & links</h2>
-    <ul class="contact-list">
-      <li><strong>Booking:</strong> <a href="mailto:rlfbooking@aol.com">rlfbooking@aol.com</a></li>
-      <li><strong>Label / Management:</strong> <a href="mailto:info@necktwister.com">info@necktwister.com</a></li>
-    </ul>
-  </section>
-
-  <footer>
-    © 2026 Adam Bomb / Necktwister. All rights reserved.
-  </footer>
+<footer>
+  © 2026 Adam Bomb / Necktwister. All rights reserved.
+</footer>
 
 </main>
 
