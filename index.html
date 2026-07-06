@@ -244,6 +244,71 @@
 </footer>
 
 </main>
+<script>
+  const tourData = {
+    "July 2026": [
+      { date: "02 Jul", city: "Casalbetrame, IT", venue: "La Cueva", notes: "" },
+      { date: "03 Jul", city: "Montpellier, FR", venue: "Secret Place", notes: "" },
+      { date: "04 Jul", city: "Nice, FR", venue: "Le Brassitorium", notes: "" },
+      { date: "06 Jul", city: "Marseille, FR", venue: "Le Cherrydon", notes: "" },
+      { date: "09 Jul", city: "Düsseldorf, DE", venue: "Pitcher", notes: "" },
+      { date: "10 Jul", city: "Ittre, BE", venue: "Zik Zak", notes: "" },
+      { date: "11 Jul", city: "Essen, DE", venue: "Freak Show", notes: "" },
+      { date: "13 Jul", city: "Barberaz, FR", venue: "Le Brin de Zinc", notes: "" },
+      { date: "14 Jul", city: "Lyon, FR", venue: "LDLC Arena", notes: "Supporting Scorpions" },
+      { date: "15 Jul", city: "Paris, FR", venue: "La Dame de Canton", notes: "" },
+      { date: "17 Jul", city: "Paris, FR", venue: "Accor Arena", notes: "Supporting Scorpions" },
+      { date: "18 Jul", city: "Mennecy, FR", venue: "Le Stock", notes: "" },
+      { date: "19 Jul", city: "Cergy, FR", venue: "Le Pacific Rock", notes: "" },
+      { date: "20 Jul", city: "Strasbourg, FR", venue: "Le Zenith", notes: "Supporting Scorpions" },
+      { date: "22 Jul", city: "Darmstadt, DE", venue: "Red Barn", notes: "" },
+      { date: "23 Jul", city: "Nuremberg, DE", venue: "Brown Sugar", notes: "" },
+      { date: "25 Jul", city: "Arnstadt, DE", venue: "Jungfersprung", notes: "" }
+    ],
+    "August 2026": [
+      { date: "06 Aug", city: "Kaunas, LT", venue: "Klub Lemmy", notes: "" },
+      { date: "07 Aug", city: "Klaipeda, LT", venue: "Maluna Loftas", notes: "" },
+      { date: "08 Aug", city: "Liepaja, LV", venue: "Fontaine Palace", notes: "" },
+      { date: "11 Aug", city: "Brno, CZ", venue: "M13", notes: "" },
+      { date: "12 Aug", city: "Vienna, AT", venue: "Chelsea", notes: "" },
+      { date: "13 Aug", city: "Hradec Kralove, CZ", venue: "AC Klub", notes: "" },
+      { date: "14 Aug", city: "Prague, CZ", venue: "Modra Vopice", notes: "" }
+    ]
+  };
+
+  function renderTourData() {
+    const container = document.getElementById("tour-auto");
+    container.innerHTML = "";
+
+    Object.keys(tourData).forEach(month => {
+      const section = document.createElement("div");
+
+      section.innerHTML = `
+        <h3>${month}</h3>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr><th>Date</th><th>City</th><th>Venue</th><th>Notes</th></tr>
+            </thead>
+            <tbody>
+              ${tourData[month].map(show => `
+                <tr>
+                  <td>${show.date}</td>
+                  <td>${show.city}</td>
+                  <td>${show.venue}</td>
+                  <td>${show.notes}</td>
+                </tr>
+              `).join("")}
+            </tbody>
+          </table>
+        </div>
+      `;
+      container.appendChild(section);
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", renderTourData);
+</script>
 
 </body>
 </html>
