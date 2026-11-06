@@ -89,17 +89,19 @@
   </div>
 
   <nav class="main-nav">
+    <a href="#booking" class="nav-cta">Booking 2027</a>
     <a href="#bio">Bio</a>
     <a href="#band">Band</a>
     <a href="#tour">Tour</a>
     <a href="#music">Music</a>
+    <a href="tour-archive.html">Tour archive</a>
     <a href="#contact">Contact</a>
   </nav>
 
   <div class="social-icons">
     <a href="https://www.facebook.com/adambomb2020" target="_blank"><img src="assets/img/misc/icon-facebook-pink.svg"></a>
     <a href="https://www.youtube.com/@flashpaper88" target="_blank"><img src="assets/img/misc/icon-youtube-pink.svg"></a>
-    <a href="http://instagram.com/adambomb.x/" target="_blank"><img src="assets/img/misc/icon-instagram-pink.svg"></a>
+    <a href="https://www.instagram.com/adambomb.x/" target="_blank"><img src="assets/img/misc/icon-instagram-pink.svg"></a>
     <a href="https://adambomb.bandcamp.com" target="_blank"><img src="assets/img/misc/icon-bandcamp-pink.svg"></a>
   </div>
 </header>
@@ -110,6 +112,21 @@
   <div class="hero-text">
     <h1>Adam Bomb</h1>
     <p>Over 40 years of high‑voltage metal, sweat and guitar fire — from <strong>Fatal Attraction</strong> to <strong>LiveDream</strong>, from clubs to arenas with Scorpions. This is the official home of Adam Bomb: tour dates, records, and rock ’n’ roll mayhem</p>
+  </div>
+</section>
+
+<section id="booking" class="booking">
+  <div class="booking-kicker">Now booking</div>
+  <h2>2027 — Bring the Bomb to your stage</h2>
+  <p class="booking-lead">Clubs, festivals and special-guest slots across Europe.</p>
+  <ul class="booking-points">
+    <li><strong>2026:</strong> special guest of <strong>Scorpions</strong> in Lyon, Paris and Strasbourg — plus 20+ headline club shows in 8 countries.</li>
+    <li><strong>40+ years</strong> of glam-punk rock ’n’ roll, explosive guitar and a show that sends crowds home hoarse.</li>
+    <li><strong>Power trio</strong> — travels light, plays loud, ready for any stage.</li>
+  </ul>
+  <div class="booking-actions">
+    <a class="btn" href="mailto:rlfbooking@aol.com?subject=Booking%20Adam%20Bomb%202027">Book a show</a>
+    <a class="btn btn-ghost" href="mailto:info@necktwister.com?subject=Adam%20Bomb%202027">Label / management</a>
   </div>
 </section>
 
@@ -139,9 +156,9 @@
 </section>
 
 <section id="tour" class="section">
-  <h2>Tour dates</h2>
+  <h2>Bang Up Summer Tour 2026</h2>
   <div id="tour-auto"></div>
-  <p class="note">All dates subject to change – check local listings and venue sites.</p>
+  <p class="note">Looking back further? See the <a href="tour-archive.html">tour archive</a>.</p>
 </section>
 
 <section id="music" class="section">
@@ -244,71 +261,6 @@
 </footer>
 
 </main>
-<script>
-  const tourData = {
-    "July 2026": [
-      { date: "02 Jul", city: "Casalbetrame, IT", venue: "La Cueva", notes: "" },
-      { date: "03 Jul", city: "Montpellier, FR", venue: "Secret Place", notes: "" },
-      { date: "04 Jul", city: "Nice, FR", venue: "Le Brassitorium", notes: "" },
-      { date: "06 Jul", city: "Marseille, FR", venue: "Le Cherrydon", notes: "" },
-      { date: "09 Jul", city: "Düsseldorf, DE", venue: "Pitcher", notes: "" },
-      { date: "10 Jul", city: "Ittre, BE", venue: "Zik Zak", notes: "" },
-      { date: "11 Jul", city: "Essen, DE", venue: "Freak Show", notes: "" },
-      { date: "13 Jul", city: "Barberaz, FR", venue: "Le Brin de Zinc", notes: "" },
-      { date: "14 Jul", city: "Lyon, FR", venue: "LDLC Arena", notes: "Supporting Scorpions" },
-      { date: "15 Jul", city: "Paris, FR", venue: "La Dame de Canton", notes: "" },
-      { date: "17 Jul", city: "Paris, FR", venue: "Accor Arena", notes: "Supporting Scorpions" },
-      { date: "18 Jul", city: "Mennecy, FR", venue: "Le Stock", notes: "" },
-      { date: "19 Jul", city: "Cergy, FR", venue: "Le Pacific Rock", notes: "" },
-      { date: "20 Jul", city: "Strasbourg, FR", venue: "Le Zenith", notes: "Supporting Scorpions" },
-      { date: "22 Jul", city: "Darmstadt, DE", venue: "Red Barn", notes: "" },
-      { date: "23 Jul", city: "Nuremberg, DE", venue: "Brown Sugar", notes: "" },
-      { date: "25 Jul", city: "Arnstadt, DE", venue: "Jungfersprung", notes: "" }
-    ],
-    "August 2026": [
-      { date: "06 Aug", city: "Kaunas, LT", venue: "Klub Lemmy", notes: "" },
-      { date: "07 Aug", city: "Klaipeda, LT", venue: "Maluna Loftas", notes: "" },
-      { date: "08 Aug", city: "Liepaja, LV", venue: "Fontaine Palace", notes: "" },
-      { date: "11 Aug", city: "Brno, CZ", venue: "M13", notes: "" },
-      { date: "12 Aug", city: "Vienna, AT", venue: "Chelsea", notes: "" },
-      { date: "13 Aug", city: "Hradec Kralove, CZ", venue: "AC Klub", notes: "" },
-      { date: "14 Aug", city: "Prague, CZ", venue: "Modra Vopice", notes: "" }
-    ]
-  };
-
-  function renderTourData() {
-    const container = document.getElementById("tour-auto");
-    container.innerHTML = "";
-
-    Object.keys(tourData).forEach(month => {
-      const section = document.createElement("div");
-
-      section.innerHTML = `
-        <h3>${month}</h3>
-        <div class="table-wrapper">
-          <table>
-            <thead>
-              <tr><th>Date</th><th>City</th><th>Venue</th><th>Notes</th></tr>
-            </thead>
-            <tbody>
-              ${tourData[month].map(show => `
-                <tr>
-                  <td>${show.date}</td>
-                  <td>${show.city}</td>
-                  <td>${show.venue}</td>
-                  <td>${show.notes}</td>
-                </tr>
-              `).join("")}
-            </tbody>
-          </table>
-        </div>
-      `;
-      container.appendChild(section);
-    });
-  }
-
-  document.addEventListener("DOMContentLoaded", renderTourData);
-</script>
 
 </body>
 </html>

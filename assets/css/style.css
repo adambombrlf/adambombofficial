@@ -238,3 +238,58 @@ footer {
   h1 { font-size: 26px; }
   h2 { font-size: 20px; }
 }
+
+/* NAV CTA */
+.main-nav a.nav-cta {
+  color: #050308;
+  background: #ff3fb0;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+.main-nav a.nav-cta:hover { text-decoration: none; background: #ff6cc4; }
+
+/* BOOKING 2027 */
+.booking {
+  margin: 8px 0 32px;
+  padding: 24px;
+  border: 1px solid #ff3fb0;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #1a0a2a 0%, #090512 70%);
+  box-shadow: 0 0 24px rgba(255, 63, 176, 0.18);
+}
+.booking h2 { border-bottom: none; margin: 4px 0 8px; font-size: 26px; }
+.booking-kicker {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #ff3fb0;
+}
+.booking-lead { font-size: 16px; margin: 0 0 12px; color: #e6dcf5; }
+.booking-points { margin: 0 0 18px; padding-left: 18px; line-height: 1.6; }
+.booking-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 4px;
+  background: #ff3fb0;
+  color: #050308;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 13px;
+}
+.btn:hover { text-decoration: none; background: #ff6cc4; }
+.btn-ghost { background: transparent; color: #ff3fb0; border: 1px solid #ff3fb0; }
+.btn-ghost:hover { background: rgba(255, 63, 176, 0.12); }
+
+/* TOUR ARCHIVE */
+.archive-year { margin-top: 28px; }
+.archive-year h2 { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.archive-year .tour-name { font-size: 14px; color: #b9a8d9; letter-spacing: 0.06em; }
+.year-nav { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.year-nav a { border: 1px solid #3b2a55; border-radius: 4px; padding: 3px 9px; font-size: 13px; }
+
+@media (max-width: 700px) {
+  .booking { padding: 18px; }
+  .booking h2 { font-size: 22px; }
+}

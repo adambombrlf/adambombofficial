@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tour Archive – Adam Bomb</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Adam Bomb tour history: past shows and tours from 2005 to today.">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <script>
+    /*
+      TOUR ARCHIVE DATA
+      Add a new year by copying one block. Newest year on top.
+      Fields: date, city, venue, notes (notes may be empty).
+    */
+    const archive = [
+      {
+        year: "2026",
+        tour: "Bang Up Summer Tour",
+        shows: [
+          { date: "02 Jul", city: "Casalbetrame, IT", venue: "La Cueva", notes: "" },
+          { date: "03 Jul", city: "Montpellier, FR", venue: "Secret Place", notes: "" },
+          { date: "04 Jul", city: "Nice, FR", venue: "Le Brassitorium", notes: "" },
+          { date: "06 Jul", city: "Marseille, FR", venue: "Le Cherrydon", notes: "" },
+          { date: "09 Jul", city: "Düsseldorf, DE", venue: "Pitcher", notes: "" },
+          { date: "10 Jul", city: "Ittre, BE", venue: "Zik Zak", notes: "" },
+          { date: "11 Jul", city: "Essen, DE", venue: "Freak Show", notes: "" },
+          { date: "13 Jul", city: "Barberaz, FR", venue: "Le Brin de Zinc", notes: "" },
+          { date: "14 Jul", city: "Lyon, FR", venue: "LDLC Arena", notes: "Supporting Scorpions" },
+          { date: "15 Jul", city: "Paris, FR", venue: "La Dame de Canton", notes: "" },
+          { date: "17 Jul", city: "Paris, FR", venue: "Accor Arena", notes: "Supporting Scorpions" },
+          { date: "18 Jul", city: "Mennecy, FR", venue: "Le Stock", notes: "" },
+          { date: "19 Jul", city: "Cergy, FR", venue: "Le Pacific Rock", notes: "" },
+          { date: "20 Jul", city: "Strasbourg, FR", venue: "Le Zenith", notes: "Supporting Scorpions" },
+          { date: "22 Jul", city: "Darmstadt, DE", venue: "Red Barn", notes: "" },
+          { date: "23 Jul", city: "Nuremberg, DE", venue: "Brown Sugar", notes: "" },
+          { date: "25 Jul", city: "Arnstadt, DE", venue: "Jungfersprung", notes: "" },
+          { date: "06 Aug", city: "Kaunas, LT", venue: "Klub Lemmy", notes: "" },
+          { date: "07 Aug", city: "Klaipeda, LT", venue: "Maluna Loftas", notes: "" },
+          { date: "08 Aug", city: "Liepaja, LV", venue: "Fontaine Palace", notes: "" },
+          { date: "11 Aug", city: "Brno, CZ", venue: "M13", notes: "" },
+          { date: "12 Aug", city: "Vienna, AT", venue: "Chelsea", notes: "" },
+          { date: "13 Aug", city: "Hradec Králové, CZ", venue: "AC Klub", notes: "" },
+          { date: "14 Aug", city: "Prague, CZ", venue: "Modrá Vopice", notes: "" }
+        ]
+      },
+      {
+        year: "2023",
+        tour: "Joint Tour 2023",
+        shows: [
+          { date: "10 Oct", city: "Poděbrady, CZ", venue: "Boss Bar", notes: "" },
+          { date: "11 Oct", city: "Hradec Králové, CZ", venue: "AC Klub", notes: "" },
+          { date: "13 Oct", city: "Darmstadt, DE", venue: "Red Barn", notes: "" },
+          { date: "14 Oct", city: "Essen, DE", venue: "Freak Show", notes: "" },
+          { date: "15 Oct", city: "Tegelen, NL", venue: "Gonzobar", notes: "" },
+          { date: "20 Oct", city: "Sedan, FR", venue: "Goulden Café", notes: "" },
+          { date: "21 Oct", city: "Hohenems, AT", venue: "Schrott Rock", notes: "" },
+          { date: "27 Oct", city: "Amsterdam, NL", venue: "The Cave", notes: "" },
+          { date: "28 Oct", city: "Arnstadt, DE", venue: "Jungfersprung", notes: "" },
+          { date: "30 Oct", city: "Hamburg, DE", venue: "Marias Ballroom", notes: "" },
+          { date: "31 Oct", city: "Bilzen, BE", venue: "South of Heaven", notes: "" },
+          { date: "04 Nov", city: "Stříbrná Skalice, CZ", venue: "Na Marjánce", notes: "" },
+          { date: "10 Nov", city: "Salzano (VE), IT", venue: "Sherwood Pub", notes: "" },
+          { date: "11 Nov", city: "Leva (VI), IT", venue: "Enfant Prodige Pub", notes: "" },
+          { date: "16 Nov", city: "Paris, FR", venue: "Dr Feelgood Rocket", notes: "" },
+          { date: "17 Nov", city: "Taden, FR", venue: "Le Relais Breton", notes: "" },
+          { date: "18 Nov", city: "Dinan, FR", venue: "Saut de la Puce", notes: "" },
+          { date: "19 Nov", city: "Saint-Malo, FR", venue: "Aux Mélèzes", notes: "" },
+          { date: "22 Nov", city: "Černošice, CZ", venue: "Klub Kino", notes: "" },
+          { date: "23 Nov", city: "Kladno, CZ", venue: "Black Road Café", notes: "" },
+          { date: "24 Nov", city: "Kolín, CZ", venue: "U Vodvárků", notes: "" },
+          { date: "30 Nov", city: "Amsterdam, NL", venue: "Last Waterhole", notes: "" },
+          { date: "01 Dec", city: "Sedan, FR", venue: "Goulden Café", notes: "" },
+          { date: "03 Dec", city: "Prague, CZ", venue: "Vagon", notes: "" },
+          { date: "08 Dec", city: "Piedimonte San Germano, IT", venue: "Metropolis Live Club", notes: "" },
+          { date: "09 Dec", city: "Rome, IT", venue: "Grooveria", notes: "" },
+          { date: "12 Dec", city: "Ivrea (TO), IT", venue: "Plug ’N’ Play", notes: "" },
+          { date: "14 Dec", city: "Maspalomas, Gran Canaria, ES", venue: "Relax Beach Club", notes: "" },
+          { date: "15 Dec", city: "Gran Canaria, ES", venue: "Rock n Roll Café Bar", notes: "" },
+          { date: "16 Dec", city: "Las Palmas, Gran Canaria, ES", venue: "Imaginario", notes: "" },
+          { date: "21 Dec", city: "Utrecht, NL", venue: "DBs", notes: "" },
+          { date: "22 Dec", city: "Ghent, BE", venue: "Asgaard", notes: "" },
+          { date: "23 Dec", city: "Leusden, NL", venue: "Fort 33", notes: "" }
+        ]
+      },
+      {
+        year: "2005",
+        tour: "UK & Europe — incl. support for Hanoi Rocks",
+        shows: [
+          { date: "20 Jan", city: "Leek, UK", venue: "V-Bar", notes: "" },
+          { date: "Feb", city: "London, UK", venue: "", notes: "Supporting Hanoi Rocks" },
+          { date: "Feb", city: "Nottingham, UK", venue: "", notes: "Supporting Hanoi Rocks" },
+          { date: "Feb", city: "Bochum, DE", venue: "", notes: "Supporting Hanoi Rocks" },
+          { date: "Mar", city: "Berlin, DE", venue: "", notes: "" }
+        ]
+      }
+    ];
+
+    function renderArchive() {
+      const nav = document.getElementById("year-nav");
+      const container = document.getElementById("archive");
+
+      archive.forEach(entry => {
+        nav.insertAdjacentHTML("beforeend", `<a href="#y${entry.year}">${entry.year}</a>`);
+
+        const section = document.createElement("section");
+        section.className = "archive-year";
+        section.id = "y" + entry.year;
+        section.innerHTML = `
+          <h2>${entry.year} <span class="tour-name">${entry.tour}</span></h2>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr><th>Date</th><th>City</th><th>Venue</th><th>Notes</th></tr>
+              </thead>
+              <tbody>
+                ${entry.shows.map(show => `
+                  <tr>
+                    <td>${show.date}</td>
+                    <td>${show.city}</td>
+                    <td>${show.venue}</td>
+                    <td>${show.notes}</td>
+                  </tr>
+                `).join("")}
+              </tbody>
+            </table>
+          </div>
+        `;
+        container.appendChild(section);
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", renderArchive);
+  </script>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+    <a href="index.html"><img src="assets/img/misc/logo.png" alt="Adam Bomb logo"></a>
+    <div>
+      <div class="logo-sub">Official site</div>
+      <div class="logo-title">ADAM BOMB</div>
+    </div>
+  </div>
+
+  <nav class="main-nav">
+    <a href="index.html#booking" class="nav-cta">Booking 2027</a>
+    <a href="index.html#bio">Bio</a>
+    <a href="index.html#tour">Tour</a>
+    <a href="index.html#music">Music</a>
+    <a href="tour-archive.html">Tour archive</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+
+  <div class="social-icons">
+    <a href="https://www.facebook.com/adambomb2020" target="_blank"><img src="assets/img/misc/icon-facebook-pink.svg" alt="Facebook"></a>
+    <a href="https://www.youtube.com/@flashpaper88" target="_blank"><img src="assets/img/misc/icon-youtube-pink.svg" alt="YouTube"></a>
+    <a href="https://www.instagram.com/adambomb.x/" target="_blank"><img src="assets/img/misc/icon-instagram-pink.svg" alt="Instagram"></a>
+    <a href="https://adambomb.bandcamp.com" target="_blank"><img src="assets/img/misc/icon-bandcamp-pink.svg" alt="Bandcamp"></a>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="hero-text">
+    <h1>Tour archive</h1>
+    <p>Two decades on the road: clubs, festivals and arenas across Europe. A selection of past tours — more years are being added.</p>
+  </div>
+</section>
+
+<nav id="year-nav" class="year-nav" aria-label="Jump to year"></nav>
+
+<div id="archive"></div>
+
+<section class="booking" style="margin-top:40px">
+  <div class="booking-kicker">Now booking</div>
+  <h2>Want the Bomb in 2027?</h2>
+  <div class="booking-actions">
+    <a class="btn" href="mailto:rlfbooking@aol.com?subject=Booking%20Adam%20Bomb%202027">Book a show</a>
+    <a class="btn btn-ghost" href="index.html#booking">Why book Adam Bomb</a>
+  </div>
+</section>
+
+<footer>
+  © 2026 Adam Bomb / Necktwister. All rights reserved.
+</footer>
+
+</main>
+
+</body>
+</html>
