@@ -322,3 +322,13 @@ details.archive-year .count { margin-left: auto; font-size: 12px; color: #8a7aa8
 .band-grid figcaption { padding: 10px 12px; font-size: 14px; color: #d8cdef; }
 @media (max-width: 700px) { .band-grid { grid-template-columns: 1fr; } }
 footer .legal-id { display: inline-block; margin-top: 6px; font-size: 11px; color: #8a7aa8; }
+
+/* LIVE PHOTOS */
+.booking-photo, .archive-photo, .bio-photo { margin: 0 0 16px; }
+.booking-photo img, .archive-photo img { width: 100%; display: block; border-radius: 6px; aspect-ratio: 3 / 2; object-fit: cover; }
+.bio-photo { float: right; width: 300px; margin: 0 0 16px 24px; }
+.bio-photo img { width: 100%; display: block; border-radius: 6px; }
+.booking-photo figcaption, .archive-photo figcaption, .bio-photo figcaption { font-size: 11px; color: #8a7aa8; margin-top: 6px; text-align: right; }
+#bio::after { content: ""; display: block; clear: both; }
+@media (max-width: 700px) { .bio-photo { float: none; width: 100%; margin: 0 0 16px; } }
+.archive-photo img { aspect-ratio: 2 / 1; object-position: center 70%; }
