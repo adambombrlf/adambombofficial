@@ -308,3 +308,9 @@ details.archive-year summary::before { content: "+"; color: #ff3fb0; font-weight
 details.archive-year[open] summary::before { content: "–"; }
 details.archive-year .yr { font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; font-size: 22px; letter-spacing: 0.08em; }
 details.archive-year .count { margin-left: auto; font-size: 12px; color: #8a7aa8; }
+
+/* SPOTIFY CLICK-TO-LOAD + PRIVACY */
+.spotify-consent { border: 1px dashed #3b2a55; border-radius: 12px; padding: 20px; background: #0b0614; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.spotify-consent p { flex: 1 1 100%; margin: 0 0 4px; font-size: 14px; color: #d8cdef; }
+.legal h2 { font-size: 18px; margin-top: 28px; }
+.legal p, .legal li { line-height: 1.6; color: #e6dcf5; }

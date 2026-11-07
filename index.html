@@ -164,11 +164,23 @@
 <section id="music" class="section">
   <h2>Music & Discography</h2>
 
-  <iframe style="border-radius:12px"
-    src="https://open.spotify.com/embed/playlist/37i9dQZF1DZ06evO0WtPV8?utm_source=generator"
-    width="100%" height="352" frameBorder="0" loading="lazy"
-    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
-  </iframe>
+  <div class="spotify-consent" id="spotify-consent">
+    <p><strong>Listen on Spotify</strong><br>
+    The player is loaded from Spotify only when you click below. Spotify then receives data such as your IP address and may set cookies. See our <a href="privacy.html">privacy notice</a>.</p>
+    <button type="button" class="btn" id="spotify-load">Load Spotify player</button>
+    <a class="btn btn-ghost" href="https://open.spotify.com/playlist/37i9dQZF1DZ06evO0WtPV8" target="_blank" rel="noopener">Open in Spotify</a>
+  </div>
+  <script>
+    document.getElementById("spotify-load").addEventListener("click", function () {
+      var box = document.getElementById("spotify-consent");
+      var f = document.createElement("iframe");
+      f.src = "https://open.spotify.com/embed/playlist/37i9dQZF1DZ06evO0WtPV8";
+      f.width = "100%"; f.height = "352"; f.style.border = "0"; f.style.borderRadius = "12px";
+      f.allow = "autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture";
+      f.title = "Adam Bomb on Spotify";
+      box.replaceWith(f);
+    });
+  </script>
 
   <p class="note">Selected albums and live releases — click any cover for details.</p>
 
@@ -257,7 +269,7 @@
 </section>
 
 <footer>
-  © 2026 Adam Bomb / Necktwister. All rights reserved.
+  © 2026 Adam Bomb / Necktwister. All rights reserved. · <a href="privacy.html">Privacy</a>
 </footer>
 
 </main>
