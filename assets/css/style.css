@@ -293,3 +293,18 @@ footer {
   .booking { padding: 18px; }
   .booking h2 { font-size: 22px; }
 }
+
+/* TOUR ARCHIVE – stats, search, collapsible years */
+.archive-stats { display: flex; flex-wrap: wrap; gap: 12px; margin: 4px 0 16px; }
+.archive-stats div { flex: 1 1 140px; background: #0b0614; border: 1px solid #2b203d; border-radius: 6px; padding: 12px 14px; }
+.archive-stats strong { display: block; font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; font-size: 28px; color: #ff3fb0; letter-spacing: 0.04em; }
+.archive-stats span { font-size: 12px; color: #b9a8d9; text-transform: uppercase; letter-spacing: 0.12em; }
+.archive-tools input { width: 100%; box-sizing: border-box; padding: 10px 12px; font-size: 15px; background: #0b0614; color: #f5f5f5; border: 1px solid #3b2a55; border-radius: 4px; }
+.archive-tools input:focus { outline: none; border-color: #ff3fb0; }
+details.archive-year { border-bottom: 1px solid #2b203d; padding: 6px 0; margin-top: 0; }
+details.archive-year summary { cursor: pointer; display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; padding: 10px 0; list-style: none; }
+details.archive-year summary::-webkit-details-marker { display: none; }
+details.archive-year summary::before { content: "+"; color: #ff3fb0; font-weight: bold; width: 12px; }
+details.archive-year[open] summary::before { content: "–"; }
+details.archive-year .yr { font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; font-size: 22px; letter-spacing: 0.08em; }
+details.archive-year .count { margin-left: auto; font-size: 12px; color: #8a7aa8; }
