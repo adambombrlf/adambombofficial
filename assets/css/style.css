@@ -332,3 +332,35 @@ footer .legal-id { display: inline-block; margin-top: 6px; font-size: 11px; colo
 #bio::after { content: ""; display: block; clear: both; }
 @media (max-width: 700px) { .bio-photo { float: none; width: 100%; margin: 0 0 16px; } }
 .archive-photo img { aspect-ratio: 2 / 1; object-position: center 70%; }
+
+/* EPK */
+.epk-hero { flex-direction: column; gap: 14px; }
+.epk-hero h1 { font-size: 40px; }
+.epk-hero p { font-size: 17px; line-height: 1.55; color: #e6dcf5; max-width: 760px; }
+.epk-facts { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.epk-facts li { background: #0b0614; border: 1px solid #2b203d; border-radius: 6px; padding: 14px; line-height: 1.5; font-size: 14px; color: #d8cdef; }
+.epk-facts strong { display: block; color: #ff3fb0; font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; letter-spacing: 0.08em; text-transform: uppercase; font-size: 16px; margin-bottom: 4px; }
+.video-card { position: relative; display: block; border-radius: 8px; overflow: hidden; border: 1px solid #3b2a55; }
+.video-card img { width: 100%; display: block; aspect-ratio: 16 / 9; object-fit: cover; filter: brightness(0.7); }
+.video-card .play { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -60%); width: 76px; height: 76px; border-radius: 50%; background: #ff3fb0; color: #050308; font-size: 32px; display: flex; align-items: center; justify-content: center; padding-left: 6px; box-sizing: border-box; }
+.video-card .video-caption { position: absolute; left: 0; right: 0; bottom: 0; padding: 12px 16px; background: rgba(5, 3, 8, 0.75); color: #f5f5f5; font-size: 14px; }
+.video-card:hover { text-decoration: none; border-color: #ff3fb0; }
+.epk-gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.epk-gallery figure { margin: 0; }
+.epk-gallery img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block; border-radius: 6px; }
+.epk-quote { margin: 0 0 14px; padding: 14px 18px; border-left: 3px solid #ff3fb0; background: #0b0614; font-size: 18px; font-style: italic; }
+.epk-quote cite { display: block; margin-top: 6px; font-size: 12px; font-style: normal; color: #b9a8d9; }
+@media (max-width: 760px) {
+  .epk-facts { grid-template-columns: 1fr; }
+  .epk-gallery { grid-template-columns: repeat(2, 1fr); }
+  .epk-hero h1 { font-size: 30px; }
+}
+@media print {
+  header { position: static; }
+  .main-nav, .social-icons, .booking-actions { display: none; }
+  body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  figure, blockquote, .epk-facts li, .video-card, .booking { break-inside: avoid; }
+  .epk-facts { grid-template-columns: repeat(3, 1fr) !important; }
+  .epk-gallery { grid-template-columns: repeat(4, 1fr) !important; }
+  .epk-hero h1 { font-size: 40px !important; }
+}
