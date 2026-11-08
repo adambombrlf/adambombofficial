@@ -364,3 +364,13 @@ footer .legal-id { display: inline-block; margin-top: 6px; font-size: 11px; colo
   .epk-gallery { grid-template-columns: repeat(4, 1fr) !important; }
   .epk-hero h1 { font-size: 40px !important; }
 }
+
+/* Language switch */
+.lang-switch { display: flex; gap: 4px; align-items: center; font-size: 13px; letter-spacing: 0.08em; }
+.lang-switch a { color: #b9a8d9; padding: 4px 7px; border: 1px solid transparent; border-radius: 4px; text-decoration: none; }
+.lang-switch a:hover { color: #ff3fb0; border-color: #3b2a55; text-decoration: none; }
+.lang-switch a[aria-current="page"] { color: #050308; background: #ff3fb0; }
+@media print {
+  .lang-switch { display: none; }
+  .video-card img { aspect-ratio: 21 / 9; }
+}
